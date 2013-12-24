@@ -21,6 +21,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    This is my JSP page. <br>
+    <div><span>hi everyone, this is my test for ssh2.</span></div>
+    <div><a href="listStudents.action">list student</a></div>
+    <div><a href="listTeachers.action">list teacher</a></div>
   </body>
 </html>

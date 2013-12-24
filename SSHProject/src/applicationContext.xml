@@ -56,15 +56,34 @@
 	</aop:config>
 
 	<!-- dao -->
-	<bean id="StudentDAO" class="com.project.po.dao.impl.StudentDAOImpl">
+	<bean id="StudentDAO" class="com.project.dao.impl.StudentDAOImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="TeachertDAO" class="com.project.po.dao.impl.TeacherDAOImpl">
+	<bean id="TeacherDAO" class="com.project.dao.impl.TeacherDAOImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	
+	<bean id="StudentService" class="com.project.service.impl.StudentServiceImpl">
+	    <property name="studentDAO">
+	        <ref bean="StudentDAO"/>
+	    </property>    
+	</bean>
+	<bean id="TeacherService" class="com.project.service.impl.TeacherServiceImpl">
+		<property name="teacherDAO">
+			<ref bean="TeacherDAO"/>
+		</property>    
+	</bean>
+	<bean id="StudentAction" class="com.project.student.action.StudentAction">
+	    <property name="studentService">
+	    	<ref bean="StudentService"/>
+	    </property>    
+	</bean>    
+	<bean id="TeacherAction" class="com.project.teacher.action.TeacherAction">
+		<property name="teacherService">
+		    <ref bean="TeacherService"/>
+		</property>
+	</bean>    
 </beans>
