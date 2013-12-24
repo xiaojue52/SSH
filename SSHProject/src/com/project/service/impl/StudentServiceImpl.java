@@ -44,4 +44,17 @@ public class StudentServiceImpl implements StudentService {
 		return studentDAO.getStudentsByHql(hql);
 	}
 
+	@Override
+	public int getTotalScore() {
+		// TODO Auto-generated method stub
+		return this.studentDAO.getTotalScore();
+	}
+
+	@SuppressWarnings("rawtypes")
+	@Override
+	public List getList(String hql) {
+		// TODO Auto-generated method stub
+		return this.studentDAO.getList(hql);
+	}
+
 }

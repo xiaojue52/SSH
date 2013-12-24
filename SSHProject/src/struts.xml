@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-
+	<package name="Student" extends="struts-default" namespace="/">
+	    <action name="listStudents" class="StudentAction" method="listStudentsAction">
+	        <result name="success">/student/list_students.jsp</result>
+	    </action>   
+	    <action name="addStudent" class="StudentAction" method="addStudentAction">
+	        <result name="success" type="redirect">/listStudents.action</result>
+	    </action>  
+	    <action name="deleteStudent" class="StudentAction" method="deleteStudentAction">
+	        <result name="success" type="redirect">/listStudents.action</result>
+	    </action>   
+	    <action name="getTotalScore" class="StudentAction" method="getTotalScoreAction">
+	    </action>  
+	    <action name="getCostomizeHqlData" class="StudentAction" method="getCostomizeHqlDataAction">
+	    </action> 
+    </package>
+    <package name="Teacher" extends="struts-default" namespace="/">
+	    <action name="listTeachers" class="TeacherAction" method="listTeachersAction">
+	        <result name="success">/teacher/list_teachers.jsp</result>
+	    </action>    
+	    <action name="addTeacher" class="TeacherAction" method="addTeacherAction">
+	        <result name="success" type="redirect">/listTeachers.action</result>
+	    </action> 
+	    <action name="deleteTeacher" class="TeacherAction" method="deleteTeacherAction">
+	        <result name="success" type="redirect">/listTeachers.action</result>
+	    </action> 
+    </package>
 </struts>   

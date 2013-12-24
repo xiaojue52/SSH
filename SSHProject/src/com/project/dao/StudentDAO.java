@@ -10,4 +10,7 @@ public interface StudentDAO {
 	public void updateStudent(Student arg0);
 	public Student getStudentById(Integer arg0);
 	public List<Student> getStudentsByHql(String hql);
+	public int getTotalScore();
+	@SuppressWarnings("rawtypes")
+	public List getList(String hql);
 }
